@@ -1,4 +1,5 @@
 import json
+
 x = {
     "firstname":"PepeGarcia",
     "secondName":"",
@@ -10,15 +11,28 @@ y = json.dumps(x)
 
 print(y)
 
-emailPrueba = "joseluissalassalguero@iesromerovargas.com"
-posicionArroba = emailPrueba.find("@")
+emailPrueba = "correodeprueba@pruebaprueba.com"
 emailPrueba = emailPrueba.split('@')
 
-print(emailPrueba[0])
+print(f'first name: {emailPrueba[0]}, last name = " " position: {emailPrueba[1]}, email {"@".join(emailPrueba)}')
 
 #Así podría comprobar si en la parte del dominio del correo es profesor, alumnado de ESO/BACH o de fp. str.find("alu") str.find("fp") 
-s = "This be a string"
-if s.find("is") == -1:
-    print("No 'is' here!")
+s = "correodeprueba@alu.iesromerovargas.com"
+positionEmail = " "
+# if s.find("fp."):
+#     positionEmail = "FP"
+# if s.find("alu."):
+#     positionEmail = "ALU"
+# elif s.find("fp.") == -1 and s.find("alu.") == -1:
+#     positionEmail = "PROF"
+
+if "alu." in s:
+    positionEmail = "ALU"
+elif "fp." in s:
+    positionEmail = "FP"
 else:
-    print("Found 'is' in the string.")
+    positionEmail = "PROF"
+
+
+
+print(positionEmail)

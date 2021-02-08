@@ -1,6 +1,7 @@
 #Intento de abrir un archivo HTML local son selenium para hacer scrapping.
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+from writeMembersCSV import WriteMembersIntoCSV
 
 import codecs
 import os 
@@ -43,4 +44,5 @@ def LimpiaElementosVaciosLista(listaMiembrosClase):
 
 #nombreArchivo = "listaMiembros.html"
 
-print(ObtenListaMiembros("listaMiembros0.html"))
+listaMiembros = ObtenListaMiembros("listaMiembros.html")
+WriteMembersIntoCSV(listaMiembros)
